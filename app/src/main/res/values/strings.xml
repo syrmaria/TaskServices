@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">TaskServices</string>
+    <string name="bind_service">Bind service</string>
+    <string name="unbind_service">Unbind service</string>
+    <string name="start_service">Start service</string>
+    <string name="start_second_activity">Start second activity</string>
+    <string name="service_result">Service result = %1$d</string>
+    <string name="default_text">Waiting for service to bind..</string>
+</resources>
