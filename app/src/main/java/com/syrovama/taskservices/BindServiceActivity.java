@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 public class BindServiceActivity extends AppCompatActivity {
     public static final String TAG = "BindServiceActivity";
-    TextView mServiceResultTextView;
+    private TextView mServiceResultTextView;
     private SomeService mBoundService;
 
     private ServiceConnection mConnection = new ServiceConnection() {
