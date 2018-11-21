@@ -1,4 +1,4 @@
-package com.syrova_ma.taskservices;
+package com.syrovama.taskservices;
 
 import android.content.ComponentName;
 import android.content.Context;
@@ -12,14 +12,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-/**
- * Created by SBT-Syrova-MA on 19.11.2018.
- */
-
 public class BindServiceActivity extends AppCompatActivity {
-    public static final String TAG = "MyBindServiceActivity";
-    TextView txt;
-
+    public static final String TAG = "BindServiceActivity";
+    TextView mServiceResultTextView;
     private SomeService mBoundService;
 
     private ServiceConnection mConnection = new ServiceConnection() {
@@ -52,7 +47,7 @@ public class BindServiceActivity extends AppCompatActivity {
                 doUnbindService();
             }
         });
-        txt = findViewById(R.id.service_result_text);
+        mServiceResultTextView = findViewById(R.id.service_result_text);
     }
 
     void doBindService() {
@@ -66,7 +61,7 @@ public class BindServiceActivity extends AppCompatActivity {
 
     private void showServiceResult() {
         int i = mBoundService.getNumber();
-        txt.setText(getString(R.string.service_result, i));
+        mServiceResultTextView.setText(getString(R.string.service_result, i));
     }
 
     private void doUnbindService() {
@@ -81,7 +76,7 @@ public class BindServiceActivity extends AppCompatActivity {
 
     @Override
     protected void onDestroy() {
-        Log.d(TAG, "OnDestroyCalled");
+        Log.d(TAG, "OnDestroy called");
         doUnbindService();
         super.onDestroy();
     }

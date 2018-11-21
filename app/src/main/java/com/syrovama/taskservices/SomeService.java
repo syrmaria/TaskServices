@@ -1,28 +1,21 @@
-package com.syrova_ma.taskservices;
+package com.syrovama.taskservices;
 
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Binder;
 import android.os.IBinder;
-import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v4.app.JobIntentService;
 import android.util.Log;
-import android.widget.Toast;
 
 import java.util.Random;
 
-/**
- * Created by SBT-Syrova-MA on 19.11.2018.
- */
-
 public class SomeService extends Service {
-    public static final String TAG = "MySomeService";
+    public static final String TAG = "SomeService";
 
     private final IBinder mBinder = new SomeBinder();
 
-    public class SomeBinder extends Binder {
+    class SomeBinder extends Binder {
         SomeService getService() {
             return SomeService.this;
         }

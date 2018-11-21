@@ -1,4 +1,4 @@
-package com.syrova_ma.taskservices;
+package com.syrovama.taskservices;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -8,14 +8,13 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-    public static final String TAG = "MyMainActivity";
-    Button serviceButton;
+    public static final String TAG = "MainActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        serviceButton = findViewById(R.id.start_service_button);
+        Button serviceButton = findViewById(R.id.start_service_button);
         serviceButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -26,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         activityButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(), BindServiceActivity.class);
+                Intent i = new Intent(MainActivity.this, BindServiceActivity.class);
                 startActivity(i);
                 Log.d(TAG, "Started second activity");
             }
